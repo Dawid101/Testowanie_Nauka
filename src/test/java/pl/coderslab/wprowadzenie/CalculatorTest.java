@@ -1,4 +1,4 @@
-package pl.coderslab.wprowadzenie_do_testowania;
+package pl.coderslab.wprowadzenie;
 
 import org.junit.jupiter.api.Test;
 

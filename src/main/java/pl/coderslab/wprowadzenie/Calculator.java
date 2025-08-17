@@ -1,4 +1,4 @@
-package pl.coderslab.wprowadzenie_do_testowania;
+package pl.coderslab.wprowadzenie;
 
 public class Calculator {
     int add(int a, int b) {
