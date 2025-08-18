@@ -1,5 +1,6 @@
 package pl.coderslab.cycle;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -44,10 +45,14 @@ class TaskManagerTest {
 
     @Test
     void testChangeNonExistingTaskStatus() {
-        Task task = new Task(2, "Cleaning", "Clean my room", "To do");
+        Task task = new Task(1, "Cleaning", "Clean my room", "To do");
         taskManager.addTask(task);
-        taskManager.changeTaskStatus(1, "In progress");
-        int size = taskManager.getTasks().size();
-        assertTrue(size > 0);
+        taskManager.changeTaskStatus(5, "In progress");
+        assertEquals("To do", taskManager.getTasks().get(0).getStatus());
+    }
+
+    @AfterEach
+    void tearDown(){
+        taskManager = null;
     }
 }
