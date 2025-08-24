@@ -1,4 +1,4 @@
-package pl.coderslab.week1.asercje;
+package pl.coderslab.week1.week1.asercje;
 
 import org.junit.jupiter.api.Test;
 import pl.coderslab.week1.exceptions.BookNotFoundException;

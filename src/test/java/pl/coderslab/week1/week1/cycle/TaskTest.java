@@ -1,4 +1,4 @@
-package pl.coderslab.week1.cycle;
+package pl.coderslab.week1.week1.cycle;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

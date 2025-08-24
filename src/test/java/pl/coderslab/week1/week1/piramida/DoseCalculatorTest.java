@@ -1,4 +1,4 @@
-package pl.coderslab.week1.piramida;
+package pl.coderslab.week1.week1.piramida;
 
 import org.junit.jupiter.api.Test;
 import pl.coderslab.week1.week1.piramida.DoseCalculator;

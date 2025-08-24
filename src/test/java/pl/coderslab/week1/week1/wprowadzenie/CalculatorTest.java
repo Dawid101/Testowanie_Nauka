@@ -1,4 +1,4 @@
-package pl.coderslab.week1.wprowadzenie;
+package pl.coderslab.week1.week1.wprowadzenie;
 
 import org.junit.jupiter.api.Test;
 import pl.coderslab.week1.week1.wprowadzenie.Calculator;

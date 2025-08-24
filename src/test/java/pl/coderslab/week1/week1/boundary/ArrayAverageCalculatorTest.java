@@ -1,4 +1,4 @@
-package pl.coderslab.week1.boundary;
+package pl.coderslab.week1.week1.boundary;
 
 import org.junit.jupiter.api.Test;
 import pl.coderslab.week1.week1.boundary.ArrayAverageCalculator;

@@ -1,4 +1,4 @@
-package pl.coderslab.week1.parameterization;
+package pl.coderslab.week1.week1.parameterization;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
