@@ -1,0 +1,1 @@
+Proces nauki testowania
