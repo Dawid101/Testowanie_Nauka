@@ -1,10 +1,22 @@
 package pl.coderslab.week2.assertj;
 
+import java.time.LocalDate;
+
 public class Task {
     private Long id;
     private String title;
     private String description;
     private Status status;
+
+    public LocalDate getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(LocalDate createDate) {
+        this.createDate = createDate;
+    }
+
+    private LocalDate createDate;
 
 
     public Task(Long id, String title, String description, Status status) {

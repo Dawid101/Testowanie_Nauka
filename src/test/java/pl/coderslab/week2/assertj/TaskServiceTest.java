@@ -3,6 +3,7 @@ package pl.coderslab.week2.assertj;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -44,7 +45,6 @@ class TaskServiceTest {
     }
 
     @Test
-
     public void testFindTasks() {
         Task task1 = taskService.createTask(1L,"Test task   1", "This is a test task   1", Status.IN_PROGRESS);
         Task task2 = taskService.createTask(2L,"Test task   2", "This is a test task   2", Status.COMPLETED);
@@ -54,6 +54,34 @@ class TaskServiceTest {
         tasks = taskService.findTasks(task2.getTitle(),task2.getStatus());
         assertThat(tasks).hasSize(1);
         assertThat(tasks.get(0).getStatus()).isEqualTo(Status.COMPLETED);
+    }
+
+    @Test
+    public void testNullOrEmptyTitle(){
+        assertThatThrownBy(() -> {
+            taskService.createTask(1L,null,"description test", Status.IN_PROGRESS);
+        }).isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> {
+           taskService.createTask(1L,"","description test", Status.IN_PROGRESS);
+        }).isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @Test
+    public void testTasksAreAddingToList(){
+        Task task1 = taskService.createTask(1L, "test","description test", Status.IN_PROGRESS);
+        Task task2 = taskService.createTask(2L, "tes2","description test2", Status.IN_PROGRESS);
+        List<Task> tasks = taskService.getTasks();
+        assertThat(tasks)
+                .isNotEmpty()
+                .hasSize(2)
+                .containsAnyOf(task1,task2);
+    }
+
+    @Test
+    public void testCreateDate(){
+        Task task1 = taskService.createTask(1L, "test","description test", Status.IN_PROGRESS);
+        LocalDate dateNow = LocalDate.now();
+        assertThat(task1.getCreateDate()).isEqualTo(dateNow);
     }
 
 }

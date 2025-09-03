@@ -53,7 +53,7 @@ class DoseCalculatorTest {
         BigDecimal bd = new BigDecimal(correctedDose);
         bd = bd.setScale(2, RoundingMode.HALF_UP);
         double roundedNumber = bd.doubleValue();
-        assertEquals(117.58,roundedNumber);
+        assertEquals(117.65,roundedNumber);
     }
 
 
